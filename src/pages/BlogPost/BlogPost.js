@@ -2,8 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCalendar, FaUser, FaComments } from 'react-icons/fa';
-import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
-import useLoading from '../../hooks/useLoading';
+
 
 /**
  * BlogPost - Page d'article de blog individuel

@@ -67,7 +67,7 @@ const Header = () => {
     { name: 'Service', path: '/services' },
     { name: 'Produit', path: '/products', hasDropdown: true, dropdownItems: productCategories },
     { name: 'A propos', path: '/a-propos' },
-    { name: 'Blog', path: '/blog' },
+    // { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 

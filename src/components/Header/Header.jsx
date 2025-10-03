@@ -116,7 +116,7 @@ const Header = () => {
                 dropdownItems: productCategories
               },
               { path: '/about', label: 'À propos' },
-              { path: '/blog', label: 'Blog' },
+              // { path: '/blog', label: 'Blog' },
               { path: '/contact', label: 'Contact' },
             ].map((item) => (
               <li key={item.path} className="relative group">
@@ -230,7 +230,7 @@ const Header = () => {
               { path: '/services', label: 'Services' },
               { path: '/products', label: 'Produits' },
               { path: '/about', label: 'À propos' },
-              { path: '/blog', label: 'Blog' },
+              // { path: '/blog', label: 'Blog' },
               { path: '/contact', label: 'Contact' },
             ].map((item) => (
               <li key={item.path}>
