@@ -10,8 +10,8 @@ import AboutUs from './pages/Apropos/AboutUs';
 import Services from './pages/Service/Services';
 import Contact from './pages/Contact/Contact_us';
 import Products from './pages/Products/Products';
-import Blog from './pages/Blog/Blog';
-import BlogPost from './pages/BlogPost/BlogPost';
+// import Blog from './pages/Blog/Blog';
+// import BlogPost from './pages/BlogPost/BlogPost';
 
 function App() {
   return (
@@ -27,8 +27,8 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/products" element={<Products />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:id" element={<BlogPost />} />
+                {/* <Route path="/blog" element={<Blog />} /> */}
+                {/* <Route path="/blog/:id" element={<BlogPost />} /> */}
               </Routes>
             </main>
           </Suspense>
