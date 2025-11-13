@@ -9,163 +9,247 @@ const Products = () => {
 
   const categories = [
     { id: 'all', name: 'Tous les Produits', icon: '🔍' },
-    { id: 'health', name: 'Santé', icon: '🏥' },
-    { id: 'renewable-energy', name: 'Énergie Renouvelable', icon: '🌱' }
+    { id: 'solutions', name: 'Solutions MedConnect', icon: '💼' },
+    { id: 'equipments', name: 'Équipements Diagnostic', icon: '🩺' },
+    { id: 'platform', name: 'Plateforme Logicielle', icon: '💻' }
   ];
 
   const subcategories = {
-    health: [
-      { id: 'teleconsultation', name: 'Téléconsultation', icon: '🩺' },
-      { id: 'medical-equipment', name: 'Équipements Médicaux', icon: '📊' },
-      { id: 'health-software', name: 'Logiciels de Santé', icon: '💻' },
-      { id: 'connected-devices', name: 'Dispositifs Connectés', icon: '📱' }
+    solutions: [
+      { id: 'mallette', name: 'Mallette MedConnect', icon: '💼' },
+      { id: 'sac-dos', name: 'Sac à Dos Nomade', icon: '🎒' },
+      { id: 'chariot', name: 'Chariot MedConnect', icon: '🛒' }
     ],
-    'renewable-energy': [
-      { id: 'solar-panels', name: 'Panneaux Solaires', icon: '☀️' },
-      { id: 'wind-turbines', name: 'Éoliennes', icon: '💨' },
-      { id: 'energy-storage', name: 'Systèmes de Stockage', icon: '🔋' },
-      { id: 'smart-grid', name: 'Solutions Smart Grid', icon: '⚡' }
+    equipments: [
+      { id: 'diagnostic', name: 'Équipements Diagnostic', icon: '📊' },
+      { id: 'teleaudiologie', name: 'Téléaudiologie', icon: '👂' },
+      { id: 'ophtalmologie', name: 'Ophtalmologie', icon: '👁️' },
+      { id: 'echographie', name: 'Échographie', icon: '🔬' }
+    ],
+    platform: [
+      { id: 'dossier-patient', name: 'Dossier Patient', icon: '📋' },
+      { id: 'teleconsultation', name: 'Téléconsultation', icon: '🩺' },
+      { id: 'teleexpertise', name: 'Téléexpertise', icon: '👨‍⚕️' },
+      { id: 'agenda', name: 'Agenda Partagé', icon: '📅' }
     ]
   };
 
   const products = [
-    // PRODUITS SANTÉ
+    // SOLUTIONS MEDCONNECT 360°
     {
       id: 1,
-      name: 'Station de Téléconsultation HD Pro',
-      description: 'Station complète pour consultations vidéo haute définition avec caméra médicale intégrée et système de diagnostic avancé',
-      price: '2,499€',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'teleconsultation',
-      mainCategory: 'health',
-      features: ['Vidéo 4K Ultra HD', 'Audio spatial 3D', 'Certification médicale CE', 'IA de diagnostic'],
+      name: 'Mallette MedConnect 360°',
+      description: 'Une révolution dans les soins aux patients. Conçue pour les professionnels de santé, cette solution portable intègre des équipements de diagnostic de pointe permettant des consultations à distance de haute qualité.',
+      image: '/images/products/mallette-medconnect.jpg',
+      category: 'mallette',
+      mainCategory: 'solutions',
+      features: ['Équipements de diagnostic de pointe', 'Consultations à distance haute qualité', 'Solution portable et complète', 'Améliore l\'accès aux soins'],
       inStock: true,
       specifications: {
-        'Résolution': '4K Ultra HD',
-        'Connexion': '5G/WiFi 6',
-        'Garantie': '3 ans',
-        'Certification': 'CE médical'
+        'Type': 'Mallette portable',
+        'Équipements': 'Diagnostic complet',
+        'Usage': 'Professionnels de santé',
+        'Avantage': 'Consultations à distance'
       }
     },
     {
       id: 2,
-      name: 'Moniteur de Signes Vitaux Connecté',
-      description: 'Appareil de monitoring en temps réel avec transmission automatique des données et alertes intelligentes',
-      price: '1,899€',
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'medical-equipment',
-      mainCategory: 'health',
-      features: ['IoT intégré', 'Batterie 48h', 'Connexion 5G', 'Alertes automatiques'],
+      name: 'Sac à Dos Nomade MedConnect 360°',
+      description: 'Portabilité et mobilité : notre sac est conçu pour être léger et facile à transporter. Accès aux soins dans les zones reculées avec équipement complet pour le diagnostic médical à distance.',
+      image: '/images/products/sac-dos-medconnect.jpg',
+      category: 'sac-dos',
+      mainCategory: 'solutions',
+      features: ['Léger et facile à transporter', 'Accès aux soins zones reculées', 'Équipement complet intégré', 'Mobilité optimale'],
       inStock: true,
       specifications: {
-        'Mesures': 'Pression, pouls, température',
-        'Autonomie': '48 heures',
-        'Connectivité': '5G, Bluetooth, WiFi',
-        'Précision': '99.9%'
+        'Type': 'Sac à dos nomade',
+        'Poids': 'Léger',
+        'Usage': 'Zones reculées',
+        'Avantage': 'Mobilité maximale'
       }
     },
     {
       id: 3,
-      name: 'Plateforme de Gestion Médicale Cloud',
-      description: 'Logiciel complet pour la gestion des dossiers patients, planning des consultations et facturation automatique',
-      price: '299€/mois',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'health-software',
-      mainCategory: 'health',
-      features: ['RGPD compliant', 'Sauvegarde automatique', 'Interface intuitive', 'Facturation intégrée'],
+      name: 'Chariot MedConnect 360°',
+      description: 'Combinant ergonomie, technologie avancée et facilité d\'utilisation, notre chariot est conçu pour transformer chaque espace en une station de télémédecine de pointe.',
+      image: '/images/products/chariot-medconnect.jpg',
+      category: 'chariot',
+      mainCategory: 'solutions',
+      features: ['Ergonomie optimale', 'Technologie avancée', 'Facilité d\'utilisation', 'Station télémédecine complète'],
       inStock: true,
       specifications: {
-        'Stockage': 'Illimité',
-        'Sécurité': 'Chiffrement AES-256',
-        'Support': '24/7',
-        'Mise à jour': 'Automatique'
-      }
-    },
-    {
-      id: 4,
-      name: 'Kit de Diagnostic à Distance',
-      description: 'Ensemble d\'outils de diagnostic connectés pour consultations à distance avec IA intégrée',
-      price: '899€',
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'connected-devices',
-      mainCategory: 'health',
-      features: ['Stéthoscope digital', 'Oto-otoscope HD', 'Thermomètre connecté', 'IA de diagnostic'],
-      inStock: true,
-      specifications: {
-        'Composants': 'Stéthoscope, otoscope, thermomètre',
-        'Connectivité': 'Bluetooth 5.0',
-        'Précision': 'Médicale grade',
-        'Batterie': '8 heures'
+        'Type': 'Chariot mobile',
+        'Usage': 'Station fixe/mobile',
+        'Avantage': 'Transformation d\'espace',
+        'Adaptabilité': 'Tous types d\'établissements'
       }
     },
 
-    // PRODUITS ÉNERGIE RENOUVELABLE
+    // ÉQUIPEMENTS DE DIAGNOSTIC
     {
-      id: 5,
-      name: 'Panneaux Solaires Monocristallins Premium',
-      description: 'Panneaux solaires haute efficacité avec technologie monocristalline et garantie 25 ans',
-      price: '1,200€/kW',
-      image: 'https://images.unsplash.com/photo-1509391366360-2e959b9eaf70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'solar-panels',
-      mainCategory: 'renewable-energy',
-      features: ['Efficacité 22%', 'Garantie 25 ans', 'Résistant aux intempéries', 'Installation facile'],
+      id: 4,
+      name: 'Camera Riester RCS 100',
+      description: 'Caméra médicale haute résolution pour examens et téléconsultations de qualité professionnelle.',
+      image: '/images/products/camera-riester.jpg',
+      category: 'diagnostic',
+      mainCategory: 'equipments',
+      features: ['Haute résolution', 'Qualité professionnelle', 'Examen détaillé', 'Téléconsultation optimale'],
       inStock: true,
       specifications: {
-        'Puissance': '400W par panneau',
-        'Efficacité': '22%',
-        'Garantie': '25 ans',
-        'Dimensions': '2m x 1m'
+        'Marque': 'Riester',
+        'Modèle': 'RCS 100',
+        'Usage': 'Examens médicaux',
+        'Qualité': 'Professionnelle'
+      }
+    },
+    {
+      id: 5,
+      name: 'ECG Cardioline',
+      description: 'Appareil ECG portable pour l\'électrocardiographie, essentiel dans le diagnostic cardiaque.',
+      image: '/images/products/ecg-cardioline.jpg',
+      category: 'diagnostic',
+      mainCategory: 'equipments',
+      features: ['Portable', 'Diagnostic cardiaque', 'Précision médicale', 'Facilité d\'utilisation'],
+      inStock: true,
+      specifications: {
+        'Type': 'ECG portable',
+        'Usage': 'Diagnostic cardiaque',
+        'Précision': 'Médicale',
+        'Portabilité': 'Oui'
       }
     },
     {
       id: 6,
-      name: 'Éolienne Domestique 5kW',
-      description: 'Éolienne verticale silencieuse pour usage résidentiel avec système de contrôle intelligent',
-      price: '8,500€',
-      image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'wind-turbines',
-      mainCategory: 'renewable-energy',
-      features: ['Silencieuse', 'Démarrage 2m/s', 'Contrôle intelligent', 'Installation simple'],
+      name: 'Glucomètre Multi-paramètres',
+      description: 'Appareil de mesure de la glycémie et autres paramètres vitaux pour le suivi des patients diabétiques.',
+      image: '/images/products/glucometre.jpg',
+      category: 'diagnostic',
+      mainCategory: 'equipments',
+      features: ['Mesure glycémie', 'Multi-paramètres', 'Suivi diabétique', 'Résultats rapides'],
       inStock: true,
       specifications: {
-        'Puissance': '5kW',
-        'Vitesse démarrage': '2 m/s',
-        'Vitesse nominale': '12 m/s',
-        'Niveau sonore': '< 35 dB'
+        'Type': 'Glucomètre',
+        'Paramètres': 'Multiples',
+        'Usage': 'Suivi diabétique',
+        'Rapidité': 'Résultats instantanés'
       }
     },
     {
       id: 7,
-      name: 'Système de Stockage Lithium-Ion 10kWh',
-      description: 'Batterie de stockage haute capacité avec gestion intelligente de l\'énergie et monitoring à distance',
-      price: '4,500€',
-      image: 'https://images.unsplash.com/photo-1591604129935-f4c4c57a0b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'energy-storage',
-      mainCategory: 'renewable-energy',
-      features: ['Capacité 10kWh', 'Gestion intelligente', 'Monitoring distant', 'Installation plug-and-play'],
+      name: 'Stéthoscope Riester',
+      description: 'Stéthoscope électronique de qualité professionnelle pour auscultation précise.',
+      image: '/images/products/stethoscope-riester.jpg',
+      category: 'diagnostic',
+      mainCategory: 'equipments',
+      features: ['Électronique', 'Qualité professionnelle', 'Auscultation précise', 'Marque Riester'],
       inStock: true,
       specifications: {
-        'Capacité': '10 kWh',
-        'Tension': '48V',
-        'Cycles': '6000+',
-        'Efficacité': '95%'
+        'Marque': 'Riester',
+        'Type': 'Électronique',
+        'Usage': 'Auscultation',
+        'Qualité': 'Professionnelle'
       }
     },
     {
       id: 8,
-      name: 'Solution Smart Grid Complète',
-      description: 'Système de gestion intelligente du réseau électrique avec IA pour optimiser la consommation et la production',
-      price: '15,000€',
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      category: 'smart-grid',
-      mainCategory: 'renewable-energy',
-      features: ['IA intégrée', 'Gestion automatique', 'Monitoring temps réel', 'Optimisation énergétique'],
-      inStock: false,
+      name: 'Moniteur de Signes Vitaux',
+      description: 'Appareil de monitoring complet pour la surveillance en temps réel des signes vitaux des patients.',
+      image: '/images/products/moniteur-signes-vitaux.jpg',
+      category: 'diagnostic',
+      mainCategory: 'equipments',
+      features: ['Monitoring complet', 'Temps réel', 'Surveillance continue', 'Multi-paramètres'],
+      inStock: true,
       specifications: {
-        'Gestion': 'Automatique',
-        'IA': 'Machine Learning',
-        'Monitoring': 'Temps réel',
-        'Économies': 'Jusqu\'à 30%'
+        'Type': 'Moniteur',
+        'Paramètres': 'Multiples',
+        'Surveillance': 'Temps réel',
+        'Usage': 'Soins intensifs'
+      }
+    },
+    {
+      id: 9,
+      name: 'Échographe Portable',
+      description: 'Échographe portable haute performance pour examens échographiques en mobilité.',
+      image: '/images/products/echographe-portable.jpg',
+      category: 'echographie',
+      mainCategory: 'equipments',
+      features: ['Portable', 'Haute performance', 'Examen mobile', 'Qualité image optimale'],
+      inStock: true,
+      specifications: {
+        'Type': 'Échographe portable',
+        'Performance': 'Haute',
+        'Mobilité': 'Oui',
+        'Qualité': 'Image optimale'
+      }
+    },
+
+    // TÉLÉAUDIOLOGIE
+    {
+      id: 10,
+      name: 'Audiomètre Luna USB Plug & Play',
+      description: 'Audiomètre USB pour tests auditifs complets, facilement connectable et utilisable.',
+      image: '/images/products/audiometre-luna.jpg',
+      category: 'teleaudiologie',
+      mainCategory: 'equipments',
+      features: ['Plug & Play USB', 'Tests auditifs complets', 'Facile à utiliser', 'Connexion simple'],
+      inStock: true,
+      specifications: {
+        'Type': 'Audiomètre USB',
+        'Connexion': 'Plug & Play',
+        'Usage': 'Tests auditifs',
+        'Facilité': 'Installation simple'
+      }
+    },
+    {
+      id: 11,
+      name: 'Tympanomètre Titan',
+      description: 'Tympanomètre professionnel pour l\'évaluation de la fonction tympanique et de l\'oreille moyenne.',
+      image: '/images/products/tympanometre-titan.jpg',
+      category: 'teleaudiologie',
+      mainCategory: 'equipments',
+      features: ['Professionnel', 'Évaluation tympanique', 'Oreille moyenne', 'Précision médicale'],
+      inStock: true,
+      specifications: {
+        'Type': 'Tympanomètre',
+        'Modèle': 'Titan',
+        'Usage': 'Évaluation auditive',
+        'Qualité': 'Professionnelle'
+      }
+    },
+
+    // OPHTALMOLOGIE
+    {
+      id: 12,
+      name: 'Visionix VX 120+',
+      description: 'Système d\'examen ophtalmologique complet pour diagnostics précis de la vision.',
+      image: '/images/products/visionix-vx120.jpg',
+      category: 'ophtalmologie',
+      mainCategory: 'equipments',
+      features: ['Examen complet', 'Diagnostic précis', 'Système intégré', 'Haute technologie'],
+      inStock: true,
+      specifications: {
+        'Type': 'Système ophtalmologique',
+        'Modèle': 'VX 120+',
+        'Usage': 'Examen vision',
+        'Technologie': 'Haute précision'
+      }
+    },
+
+    // PLATEFORME LOGICIELLE
+    {
+      id: 13,
+      name: 'Plateforme Logicielle Intégrée',
+      description: 'Plateforme logicielle parfaitement intégrée avec modules Dossier Patient, Téléconsultation, Téléexpertise, Agenda Partagé et Mode Urgences.',
+      image: '/images/products/plateforme-logicielle.jpg',
+      category: 'dossier-patient',
+      mainCategory: 'platform',
+      features: ['Dossier Patient Informatisé', 'Téléconsultation en direct', 'Téléexpertise', 'Agenda Partagé', 'Mode Urgences', 'Logiciel Cloud'],
+      inStock: true,
+      specifications: {
+        'Type': 'Plateforme Cloud',
+        'Modules': 'Complets',
+        'Sécurité': 'Normes élevées',
+        'Intégration': 'Parfaite'
       }
     }
   ];
@@ -231,16 +315,10 @@ const Products = () => {
                   alt={product.name} 
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" 
                 />
-                {!product.inStock && (
-                  <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Rupture de stock
-                  </div>
-                )}
                 <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  {product.category === 'teleconsultation' && 'Téléconsultation'}
-                  {product.category === 'equipments' && 'Équipement'}
-                  {product.category === 'software' && 'Logiciel'}
-                  {product.category === 'accessories' && 'Accessoire'}
+                  {product.mainCategory === 'solutions' && 'Solution MedConnect'}
+                  {product.mainCategory === 'equipments' && 'Équipement'}
+                  {product.mainCategory === 'platform' && 'Plateforme'}
                 </div>
               </div>
               
@@ -271,17 +349,6 @@ const Products = () => {
                       ))}
                     </div>
                   </div>
-                </div>
-                
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-2xl font-bold text-blue-600">{product.price}</span>
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    product.inStock 
-                      ? 'bg-green-100 text-green-800' 
-                      : 'bg-red-100 text-red-800'
-                  }`}>
-                    {product.inStock ? 'En stock' : 'Rupture'}
-                  </span>
                 </div>
                 
                 <div className="flex gap-3">

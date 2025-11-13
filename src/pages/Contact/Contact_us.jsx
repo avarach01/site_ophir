@@ -29,10 +29,13 @@ const Contact_us = () => {
           <div className="space-y-6">
             <div className="bg-gray-100 rounded-lg shadow-lg p-6">
               <h2 className="text-xl font-semibold mb-2 text-gray-700">Nos coordonnées</h2>
-              <p className="text-gray-600">123 Rue de l'Example</p>
-              <p className="text-gray-600">75000 Paris, France</p>
-              <p className="text-gray-600">Téléphone : +33 1 23 45 67 89</p>
-              <p className="text-gray-600">Email : contact@example.com</p>
+              <p className="text-gray-600">Angré djorobité 2, zone nouveau CHU</p>
+              <p className="text-gray-600">En bordure de la Y 4</p>
+              <p className="text-gray-600">Téléphone : +225 01 40 1 1 16 16</p>
+              <p className="text-gray-600">Téléphone : +225 07 78 03 51 46</p>
+              <p className="text-gray-600">Email : contact@ophir-technologies.com</p>
+              <p className="text-gray-600">Email : simone.able@ophir-technologies.com</p>
+              <p className="text-gray-600">Site web : www.ophir-technologies.com</p>
             </div>
             
             <div className="bg-gray-100 rounded-lg shadow-lg p-6">

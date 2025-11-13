@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
  
 const FormContact = () => {
-  const [selectedPrefix, setSelectedPrefix] = useState('+33');
+  const [selectedPrefix, setSelectedPrefix] = useState('+225');
 
   const handlePrefixChange = (e) => {
     setSelectedPrefix(e.target.value);
@@ -43,13 +43,13 @@ const FormContact = () => {
                   onChange={handlePrefixChange}
                   value={selectedPrefix}
                 >
+                  <option value="+225">Côte d'Ivoire (+225)</option>
                   <option value="+33">France (+33)</option>
                   <option value="+1">États-Unis (+1)</option>
                   <option value="+44">Royaume-Uni (+44)</option>
                   <option value="+49">Allemagne (+49)</option>
                   <option value="+39">Italie (+39)</option>
                   <option value="+34">Espagne (+34)</option>
-                  {/* Ajoutez d'autres options selon vos besoins */}
                 </select>
               </div>
               <div className="w-full sm:w-2/3">
@@ -92,15 +92,25 @@ const FormContact = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               <FaPhone className="mr-2 text-blue-500" />
-              <span>+33 1 23 45 67 89</span>
+              <div className="flex flex-col">
+                <span>+225 01 40 1 1 16 16</span>
+                <span>+225 07 78 03 51 46</span>
+              </div>
             </div>
             <div className="flex items-center">
               <FaEnvelope className="mr-2 text-blue-500" />
-              <span>contact@example.com</span>
+              <div className="flex flex-col">
+                <span>contact@ophir-technologies.com</span>
+                <span>simone.able@ophir-technologies.com</span>
+              </div>
             </div>
             <div className="flex items-center">
               <FaMapMarkerAlt className="mr-2 text-blue-500" />
-              <span>123 Rue Example, 75000 Paris</span>
+              <span>Angré djorobité 2, zone nouveau CHU<br />En bordure de la Y 4</span>
+            </div>
+            <div className="flex items-center">
+              <FaEnvelope className="mr-2 text-blue-500" />
+              <span>www.ophir-technologies.com</span>
             </div>
           </div>
 

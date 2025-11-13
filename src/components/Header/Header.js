@@ -20,52 +20,11 @@ import { motion, AnimatePresence } from 'framer-motion';
  */
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState(null);
   const location = useLocation();
-
-  const handleProductsMouseEnter = () => {
-    if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout);
-      setDropdownTimeout(null);
-    }
-    setIsProductsDropdownOpen(true);
-  };
-
-  const handleProductsMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setIsProductsDropdownOpen(false);
-    }, 200);
-    setDropdownTimeout(timeout);
-  };
-
-  const productCategories = [
-    { 
-      name: 'Santé', 
-      path: '/products?category=health',
-      subcategories: [
-        { name: 'Télémédecine', path: '/products?category=health&sub=telemedicine' },
-        { name: 'Équipements médicaux', path: '/products?category=health&sub=medical-equipment' },
-        { name: 'Diagnostic avancé', path: '/products?category=health&sub=diagnostic' },
-        { name: 'Monitoring patient', path: '/products?category=health&sub=monitoring' }
-      ]
-    },
-    { 
-      name: 'Énergie Renouvelable', 
-      path: '/products?category=renewable-energy',
-      subcategories: [
-        { name: 'Panneaux solaires', path: '/products?category=renewable-energy&sub=solar' },
-        { name: 'Éoliennes', path: '/products?category=renewable-energy&sub=wind' },
-        { name: 'Batteries de stockage', path: '/products?category=renewable-energy&sub=batteries' },
-        { name: 'Systèmes hybrides', path: '/products?category=renewable-energy&sub=hybrid' }
-      ]
-    }
-  ];
 
   const menuItems = [
     { name: 'Accueil', path: '/' },
     { name: 'Service', path: '/services' },
-    { name: 'Produit', path: '/products', hasDropdown: true, dropdownItems: productCategories },
     { name: 'A propos', path: '/a-propos' },
     // { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
@@ -96,71 +55,14 @@ const Header = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative group"
               >
-                {item.hasDropdown ? (
-                  <div 
-                    className="relative"
-                    onMouseEnter={handleProductsMouseEnter}
-                    onMouseLeave={handleProductsMouseLeave}
-                  >
-                    <Link
-                      to={item.path}
-                      className={`transition duration-300 text-lg sm:text-xl font-semibold pb-2 flex items-center ${
-                        location.pathname === item.path ? 'text-black' : 'text-gray-800 hover:text-black'
-                      }`}
-                    >
-                      {item.name}
-                      <svg className={`w-4 h-4 ml-1 transition-transform duration-200 ${isProductsDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </Link>
-                    
-                    {/* Dropdown */}
-                    {isProductsDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 py-6 z-50">
-                        <div className="grid grid-cols-2 gap-6">
-                          {item.dropdownItems?.map((category, index) => (
-                            <div key={index} className="px-6">
-                              <Link
-                                to={category.path}
-                                className="mb-4 text-gray-900 font-bold hover:text-blue-600 transition-colors text-lg"
-                              >
-                                {category.name}
-                              </Link>
-                              <div className="ml-0 space-y-3">
-                                {category.subcategories?.map((subcategory, subIndex) => (
-                                  <Link
-                                    key={subIndex}
-                                    to={subcategory.path}
-                                    className="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1 px-2 rounded hover:bg-blue-50"
-                                  >
-                                    {subcategory.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="border-t mt-4 pt-4 px-6">
-                          <Link 
-                            to="/products" 
-                            className="text-center block w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                          >
-                            Voir tous les produits
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className={`transition duration-300 text-lg sm:text-xl font-semibold pb-2 ${
-                      location.pathname === item.path ? 'text-black' : 'text-gray-800 hover:text-black'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                )}
+                <Link
+                  to={item.path}
+                  className={`transition duration-300 text-lg sm:text-xl font-semibold pb-2 ${
+                    location.pathname === item.path ? 'text-black' : 'text-gray-800 hover:text-black'
+                  }`}
+                >
+                  {item.name}
+                </Link>
                 <span 
                   className={`absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400 transform origin-left transition-all duration-300 ${
                     location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
